@@ -11,7 +11,7 @@ let zip = prompt("Enter the zip");
 validate(zip);
 //Validating Email
 function validateEmail(email) {
-    let emailRegex = RegExp('^[a-zA-Z0-9_]+');
+    let emailRegex = RegExp('^[a-zA-Z0-9_]+@[A-Za-z]+');
     if (emailRegex.test(email)) {
         console.log("Email is correct");
     } else {
