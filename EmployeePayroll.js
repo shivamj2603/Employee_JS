@@ -16,7 +16,11 @@ class EmployeePayrollData {
       return this._name
     }
     set name(name){
-      this._name = name
+        let nameRegex = RegExp('^[A-Z]{1}[a-z]{3,}$')
+        if(nameRegex.test(name))
+          this._name = name
+        else
+          throw "Name incorrect"
     }
     get salary() {
       return this._salary
@@ -44,8 +48,12 @@ class EmployeePayrollData {
     }
   }
   let employeePayrollData = new EmployeePayrollData(1, "Mark", 2000)
-  console.log(employeePayrollData.toString())
-  employeePayrollData.name = "John"
-  console.log(employeePayrollData.toString())
-  let newEmployeePayrollData = new EmployeePayrollData(1, "Mark", 2000, "M", new Date())
-  console.log(newEmployeePayrollData.toString())
+    console.log(employeePayrollData.toString())
+    try {
+      employeePayrollData.name = "john"
+      console.log(employeePayrollData.toString())
+    } catch (error) {
+      console.error(error)
+    }
+    let newEmployeePayrollData = new EmployeePayrollData(1, "Mark", 2000, "M", new Date())
+    console.log(newEmployeePayrollData.toString())
