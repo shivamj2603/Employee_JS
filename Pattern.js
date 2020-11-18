@@ -1,5 +1,5 @@
 function validate(zip) {
-    let zipRegex = RegExp('^[0-9]{6}$');
+    let zipRegex = RegExp('^[0-9]{3}[ ]?[0-9]{3}$');
     if (zipRegex.test(zip)) {
         console.log("Zip is correct");
     } else {
